@@ -28,11 +28,11 @@ public class Course {
 
     public void showCourseInfo() { //**********
         System.out.println("Course: "+ cName);
-        System.out.println("-- Teacher: " + teacher.tName);
+        System.out.println("-- Teacher: " + teacher.name);
         StringBuilder s = new StringBuilder();
         StringBuilder g = new StringBuilder();
         for (int i=0; i<studentCount ; i++) {
-            s.append(students[i].sName).append(", ");
+            s.append(students[i].name).append(", ");
             g.append(Integer.toString(grades[i])).append(", ");
         }
         System.out.println("-- Students: " + s);
@@ -50,7 +50,7 @@ public class Course {
     public void score(Student s, int g) {
         int idx = getIndex(s);
         if (idx == -1) {
-            System.out.println(s.sName + " is not in " + cName);
+            System.out.println(s.name + " is not in " + cName);
         } else {
             grades[idx] = g;
         }

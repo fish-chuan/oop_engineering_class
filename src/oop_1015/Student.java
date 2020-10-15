@@ -1,18 +1,14 @@
 package oop_1015;
 
-public class Student {
-    String sName;
-    private String email;
+public class Student extends Member {
     Course[] courses = new Course[10];
     int courseCount = 0;
 
+
     public Student(String sName) {
-        this.sName = sName;
+        super(sName);
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
     public void takeCourse(Course c) {
         if (courseCount <=9) {
             courses[courseCount++] = c;
@@ -22,7 +18,7 @@ public class Student {
             System.out.println("Hei, you take too many courses");
     }
     public void showGrade() { //++++++++++
-        System.out.println("The grades of student " + sName);
+        System.out.println("The grades of student " + name);
         for (int i=0; i<courseCount; i++) {
             Course c = courses[i];
             String gString = "no grade";

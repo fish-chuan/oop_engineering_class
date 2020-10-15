@@ -1,17 +1,11 @@
 package oop_1015;
 
-public class Teacher {
-    String tName;
-    private String email;
+public class Teacher extends Member {
     Course[] courses = new Course[10];
     int courseCount = 0;
 
     public Teacher(String tName) {
-        this.tName = tName;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+        super(tName);
     }
 
     public void offer(Course c) {
