@@ -1,8 +1,9 @@
 package oop_1015;
 
-public class Teacher extends Member {
+class Teacher extends Member implements Instructor {
     Course[] courses = new Course[10];
     int courseCount = 0;
+    Qualification qualification;
 
     public Teacher(String tName) {
         super(tName);
@@ -39,4 +40,13 @@ public class Teacher extends Member {
         return false;
     }
 
+    @Override
+    public void setQualification(Qualification q) {
+        this.qualification = q;
+    }
+
+    @Override
+    public void showQualification() {
+        System.out.println(name + " is a teacher because " + qualification);
+    }
 }
